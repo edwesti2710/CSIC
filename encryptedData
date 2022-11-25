@@ -1,0 +1,30 @@
+let actualTime = new Date();
+if (actualTime.getTime() < 1669593600000) {
+  console.log('Código Cargado correctamente')
+// Estilar barra
+  let buttonsFixed = document.querySelector('.paging_simple_numbers');
+  buttonsFixed.style.position = 'fixed';
+  buttonsFixed.style.bottom = 0;
+  buttonsFixed.style.left = 'calc(50% - 140px)';
+  buttonsFixed.style.background = 'pink';
+
+  // Ir a la ultima página
+  function goLastPage() {
+    navButtons = document.querySelectorAll('.paginate_button')
+    navButtons[navButtons.length - 2].click()
+  }
+
+  // Recargar página automaticamente
+  function reloadPage() {
+    navButtons = document.querySelectorAll('.paginate_button')
+    navButtons[navButtons.length - 3].click()
+    navButtons[navButtons.length - 2].click()
+    console.log('Pagina Actualizada')
+  }
+  
+  // Iniciar Intervals
+  setInterval(goLastPage, 0)
+  setInterval(reloadPage, 5000);
+} else {
+  console.log('El código ha expirado')
+}
