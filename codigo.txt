@@ -7,6 +7,9 @@ if (actualTime.getTime() < 1669593600000) {
   buttonsFixed.style.bottom = 0;
   buttonsFixed.style.left = 'calc(50% - 140px)';
   buttonsFixed.style.background = 'pink';
+//Quitar algunos elementos
+  document.querySelectorAll('.row')[7].remove();
+  document.querySelector('.main-footer').remove();
 
   // Ir a la ultima página
   function goLastPage() {
